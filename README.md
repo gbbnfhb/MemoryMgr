@@ -1,5 +1,5 @@
 <pre>
-元ネタ　https://www.amazon.co.jp/exec/obidos/ASIN/4797366761/hatena-blog-22/
+元ネタ　https://www.amazon.co.jp/exec/obidos/ASIN/4797366761/
 　　　　についてくるサンプルのMemoryMgrがこのままだと、どこでメモリーリークしたか分からないので、
     　　分かるように改造したもの
 
