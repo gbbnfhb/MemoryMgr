@@ -21,10 +21,10 @@ public:
     static void ReportMemoryLeaks (int nBookmark);
     static void ReportMemoryLeaks (int nBookmark1, int nBookmark2);
 
-    
+    static Heap * FindHeap (const char * name);
+
 private:
 	static Heap * GetRootHeap ();
-    static Heap * FindHeap (const char * name);
     static Heap * CreateNewHeap (const char * name);
     static void PrintHeapTree(Heap * pHeap);
 

@@ -2,15 +2,21 @@
 #ifndef HEAP_H_
 #define HEAP_H_
 
+//typedef unsigned long size_t;
 
 struct AllocHeader;
+
+extern char gMark[128];
+#define _Mark(s) strcpy(gMark,s);
+#define _unMark(s) strcpy(gMark,"");
 
 class Heap
 {
 public:
     void Initialize();
-    
+
     void * Allocate(size_t bytes);
+    void * Allocate(size_t bytes,const char* file,int line);
     static void Deallocate (void * pMem);
 
     void Activate (const char * name);
@@ -39,6 +45,10 @@ private:
     size_t m_bytesAllocated;
     size_t m_bytesPeak;
     int    m_nInstances;
+
+    char   m_file_name[NAMELENGTH];
+    int    m_line;
+
     AllocHeader * m_pHeadAlloc;
 
     Heap * m_pParent;
